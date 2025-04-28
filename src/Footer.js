@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Footer = () => {
+const Footer = ({length}) => {
   const today = new Date();
 
   return (
@@ -8,7 +8,14 @@ const Footer = () => {
       backgroundColor: 'mediumblue',
       color: '#fff',
     }}>
-      <p>Copyright &copy; {today.getFullYear()}</p>
+      {length!=0 ?
+        (<p>{length} List {length===1 ? "item" : "items"}</p>)
+      : 
+        (<p>There is no items in the list</p>)
+      }
+      {/* 
+       <p>Copyright &copy; {today.getFullYear()}</p> 
+      */}
     </footer>
   )
 }
